@@ -1,19 +1,19 @@
-let colors =["#ff4aed","#4ac9ff","#ff4a95", "#fed000", "#68ff4a", "#e1ff4a", "#e2f0f3", "#fff94a"];
+let colors =["#ff4aed","#4ac9ff","#ff4a95"];
 
 
 function setup() {
 	createCanvas(windowWidth, windowHeight);
-    background(255);
+    
     noStroke()
     colorMode(RGB, 200, 200);
-   
+    blendMode(SOFT_LIGHT);
 	tiling()
 }
 
 function tiling() {
-	let offset = 100;
+	let offset = 10;
 	let gridCountW = 50;
-	let gridCountH =40;
+	let gridCountH =50;
 	let gridW = (width - (offset *2)) / gridCountW;
 	let gridH = (height - (offset *2)) / gridCountH;
 	let emp = gridCountW * gridCountH;
@@ -30,7 +30,7 @@ function tiling() {
 	}
 //fill the grid with rectangles 
 	while (emp > 0) {
-		let w = int(random(1, gridCountW));
+		let w = int(random(1, 15));
 		let h = w;
 		let x = int(random(gridCountW - w + 1));
 		let y = int(random(gridCountH - h + 1));
@@ -74,22 +74,22 @@ squareSize = w; // colors shade dark
 let middle = w/2;
   
   fill(randomcolor());
-  rect(x+middle, y+middle, squareSize - 5);
+  ellipse(x+middle, y+middle, squareSize );
   
   fill(randomcolor());
-  rect(x+middle, y+middle, squareSize - 14);
+  ellipse(x+middle, y+middle, squareSize );
   
    fill(randomcolor());
-  rect(x+middle, y+middle, squareSize - 10);
+  ellipse(x+middle, y+middle, squareSize );
   
     fill(randomcolor());
-  rect(x+middle, y+middle, squareSize - 26);
+  rect(x+middle, y+middle, squareSize );
   
    fill(randomcolor());
- rect(x+middle, y+middle, squareSize - 35);
+ rect(x+middle, y+middle, squareSize );
 
   fill(randomcolor());
-  rect(x+middle, y+middle, squareSize - 45);
+  rect(x+middle, y+middle, squareSize );
   
 
 }
